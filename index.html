@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🍅 Умный Pomodoro Таймер</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/achievements.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🍅 Умный Pomodoro</h1>
+            <p class="subtitle">Сфокусируйтесь и восстановитесь с умными практиками</p>
+        </header>
+        
+        <div class="settings">
+            <h3 class="section-title">⚙️ Настройки времени</h3>
+            <div class="time-inputs">
+                <div class="time-input">
+                    <label>🕐 Работа (мин)</label>
+                    <input type="number" id="workTime" min="1" max="120" value="25">
+                </div>
+                <div class="time-input">
+                    <label>🔄 Отдых (сек)</label>
+                    <input type="number" id="breakTime" min="1" max="600" value="30">
+                </div>
+            </div>
+            <button class="settings-btn" onclick="pomodoro.applySettings()">💾 Применить настройки</button>
+        </div>
+        
+        <div id="timerSection" class="timer-section work-active">
+            <div id="sessionInfo">💼 Сессия 1 • Сфокусируйтесь!</div>
+            <div id="practiceInfo"></div>
+            <div class="timer-display" id="timerDisplay">25:00</div>
+            <div class="progress-container">
+                <div id="progress" class="progress-fill progress-work" style="width: 100%"></div>
+            </div>
+            
+            <div id="currentStepInfo" class="current-step-info"></div>
+            
+            <div class="mini-stats">
+                <div class="mini-stat">
+                    <div class="mini-stat-value" id="miniSessionsCompleted">0</div>
+                    <div class="mini-stat-label">💼 Сессий</div>
+                </div>
+                <div class="mini-stat">
+                    <div class="mini-stat-value" id="miniTotalTime">0:00</div>
+                    <div class="mini-stat-label">⏱️ Время</div>
+                </div>
+                <div class="mini-stat">
+                    <div class="mini-stat-value" id="miniTechniquesUsed">0</div>
+                    <div class="mini-stat-label">🌿 Практик</div>
+                </div>
+            </div>
+            
+            <div id="stepInstruction" class="step-instruction">Нажмите "Старт" для начала работы</div>
+            <div id="nextStepPreview" class="next-step-preview" style="display: none;"></div>
+            
+            <div class="controls">
+                <button id="mainButton" class="primary-btn" onclick="pomodoro.toggleTimer()"><span>▶</span> Старт</button>
+                <button class="secondary-btn" onclick="pomodoro.resetTimer()"><span>↺</span> Сброс</button>
+            </div>
+        </div>
+        
+        <div class="techniques-section">
+            <h3 class="section-title">🌿 Практики восстановления</h3>
+            <div id="categoryDescription" class="category-description">
+                <strong>🌬️ Дыхательные практики:</strong> Техники управления дыханием для снятия стресса, улучшения концентрации и восстановления энергетического баланса.
+            </div>
+            <div class="auto-practice-info">После завершения работы автоматически начнется практика восстановления</div>
+            <div class="techniques-categories">
+                <div class="category-btn active" onclick="pomodoro.showCategory('breathing')">🌬️ Дыхание</div>
+                <div class="category-btn" onclick="pomodoro.showCategory('physical')">💪 Физические</div>
+                <div class="category-btn" onclick="pomodoro.showCategory('vision')">👀 Зрение</div>
+                <div class="category-btn" onclick="pomodoro.showCategory('cognitive')">🧠 Когнитивные</div>
+                <div class="category-btn" onclick="pomodoro.showCategory('energy')">⚡ Энергия</div>
+            </div>
+            <div class="techniques-grid" id="techniquesGrid"></div>
+        </div>
+        
+        <div id="practiceSteps" class="practice-steps">
+            <h3>📋 Шаги выполнения</h3>
+            <ul id="stepList" class="step-list"></ul>
+        </div>
+
+        <div class="sessions-history">
+            <div class="history-header" onclick="pomodoro.toggleHistory()">
+                <h3 class="section-title">📊 История сессий</h3>
+                <div class="history-toggle">▼</div>
+            </div>
+            <div class="history-content" id="historyContent">
+                <div class="auto-practice-info">Ваши завершенные рабочие периоды и практики восстановления</div>
+                <ul id="historyList" class="history-list"></ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="notification" id="notification">
+        <span id="notificationIcon">🔔</span>
+        <span id="notificationText">Уведомление</span>
+    </div>
+
+    <script src="js/custom.js"></script>
+<script src="js/achievements.js"></script>
+<script src="js/statistics.js"></script>
+<script src="js/practices.js"></script>
+<script src="js/timer.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
