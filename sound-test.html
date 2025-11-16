@@ -1,0 +1,100 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Sound Test</title>
+</head>
+<body>
+    <h2>🔊 Тест звуковой системы</h2>
+    <button onclick="testWorkSound()">Тест звука работы</button>
+    <button onclick="testBreakSound()">Тест звука перерыва</button>
+    <button onclick="testSessionSound()">Тест звука сессии</button>
+    
+    <script>
+    // Копируем код из notifications.js для теста
+    class TestNotificationManager {
+        constructor() {
+            this.audioContext = null;
+            this.soundActivated = false;
+            this.setupSoundActivation();
+        }
+
+        setupSoundActivation() {
+            const activateSounds = () => {
+                if (!this.soundActivated) {
+                    this.soundActivated = true;
+                    this.audioContext = new (window.AudioContext || window.webkitAudioContext)();
+                    console.log("🔊 Звуки активированы в тесте!");
+                }
+            };
+            document.addEventListener("click", activateSounds, { once: true });
+        }
+
+        playSound(frequency, duration, volume = 0.1) {
+            if (!this.soundActivated || !this.audioContext) {
+                console.log("❌ Звуки не активированы или audioContext не создан");
+                return;
+            }
+
+            try {
+                if (this.audioContext.state === "suspended") {
+                    this.audioContext.resume();
+                }
+                
+                const oscillator = this.audioContext.createOscillator();
+                const gainNode = this.audioContext.createGain();
+                
+                oscillator.connect(gainNode);
+                gainNode.connect(this.audioContext.destination);
+                
+                oscillator.frequency.value = frequency;
+                oscillator.type = "sine";
+                
+                const now = this.audioContext.currentTime;
+                gainNode.gain.setValueAtTime(0, now);
+                gainNode.gain.linearRampToValueAtTime(volume, now + 0.1);
+                gainNode.gain.exponentialRampToValueAtTime(0.001, now + duration);
+                
+                oscillator.start(now);
+                oscillator.stop(now + duration);
+                console.log("✅ Звук воспроизведен: " + frequency + "Hz");
+                
+            } catch (error) {
+                console.log("❌ Ошибка звука:", error);
+            }
+        }
+
+        playWorkEndSound() {
+            this.playSound(784, 0.8, 0.08);
+            setTimeout(() => this.playSound(1047, 0.6, 0.06), 200);
+        }
+
+        playBreakEndSound() {
+            this.playSound(523, 1.0, 0.07);
+        }
+
+        playSessionCompleteSound() {
+            this.playSound(523, 0.5, 0.06);
+            setTimeout(() => this.playSound(659, 0.5, 0.06), 200);
+            setTimeout(() => this.playSound(784, 0.7, 0.07), 400);
+        }
+    }
+
+    const testManager = new TestNotificationManager();
+
+    function testWorkSound() {
+        console.log("🔔 Тестируем звук окончания работы...");
+        testManager.playWorkEndSound();
+    }
+
+    function testBreakSound() {
+        console.log("🔔 Тестируем звук окончания перерыва...");
+        testManager.playBreakEndSound();
+    }
+
+    function testSessionSound() {
+        console.log("🔔 Тестируем звук завершения сессии...");
+        testManager.playSessionCompleteSound();
+    }
+    </script>
+</body>
+</html>

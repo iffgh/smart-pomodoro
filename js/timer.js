@@ -1,4 +1,4 @@
-class Timer {
+﻿class Timer {
     constructor(pomodoro) {
         this.pomodoro = pomodoro;
     }
@@ -86,10 +86,18 @@ class Timer {
         this.pauseTimer();
         
         if (this.pomodoro.mode === 'work') {
+    // УВЕДОМЛЕНИЕ: Работа закончена
+    if (typeof notificationManager !== 'undefined') {
+        notificationManager.notifyWorkEnd();
+    }
             this.pomodoro.addSessionToHistory();
             const nextPractice = this.pomodoro.practices.getNextPractice();
             this.pomodoro.startPractice(nextPractice);
         } else if (this.pomodoro.mode === 'practice') {
+    // УВЕДОМЛЕНИЕ: Перерыв закончен
+    if (typeof notificationManager !== 'undefined') {
+        notificationManager.notifyBreakEnd();
+    }
             this.pomodoro.addSessionToHistory();
             this.pomodoro.mode = 'work';
             this.pomodoro.currentTime = this.pomodoro.workTime * 60;
@@ -115,12 +123,20 @@ class Timer {
         document.getElementById('timerDisplay').textContent = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
         
         if (this.pomodoro.mode === 'work') {
+    // УВЕДОМЛЕНИЕ: Работа закончена
+    if (typeof notificationManager !== 'undefined') {
+        notificationManager.notifyWorkEnd();
+    }
             document.getElementById('sessionInfo').innerHTML = `💼 Сессия ${this.pomodoro.sessionCount + 1} • Сфокусируйтесь!`;
             document.getElementById('practiceInfo').textContent = '';
             document.getElementById('progress').className = 'progress-fill progress-work';
             const totalWorkTime = this.pomodoro.workTime * 60;
             document.getElementById('progress').style.width = `${((totalWorkTime - this.pomodoro.currentTime) / totalWorkTime) * 100}%`;
         } else if (this.pomodoro.mode === 'practice') {
+    // УВЕДОМЛЕНИЕ: Перерыв закончен
+    if (typeof notificationManager !== 'undefined') {
+        notificationManager.notifyBreakEnd();
+    }
             document.getElementById('sessionInfo').innerHTML = '🌿 Практика восстановления';
             document.getElementById('progress').className = 'progress-fill progress-practice';
             document.getElementById('progress').style.width = `${((this.pomodoro.currentPractice.duration - this.pomodoro.currentTime) / this.pomodoro.currentPractice.duration) * 100}%`;
