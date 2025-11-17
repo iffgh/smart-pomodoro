@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Floating Test</title>
+    <style>
+        .floating-settings { position: fixed; top: 20px; right: 20px; z-index: 1000; }
+        .settings-toggle-btn { background: #3498db; color: white; border: none; border-radius: 50%; width: 50px; height: 50px; font-size: 20px; cursor: pointer; }
+        .settings-panel { display: none; background: #2c3e50; color: white; padding: 20px; border-radius: 10px; margin-top: 10px; }
+    </style>
+</head>
+<body>
+    <div class="floating-settings">
+        <button class="settings-toggle-btn" onclick="toggleTest()">⚙️</button>
+        <div class="settings-panel" id="testPanel">
+            <h3>Тест меню</h3>
+            <p>Если это открывается - значит проблема в основном коде</p>
+        </div>
+    </div>
+    
+    <script>
+    function toggleTest() {
+        const panel = document.getElementById('testPanel');
+        panel.style.display = panel.style.display === 'block' ? 'none' : 'block';
+        console.log("Тест меню работает!");
+    }
+    </script>
+</body>
+</html>

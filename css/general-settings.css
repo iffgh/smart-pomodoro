@@ -1,0 +1,170 @@
+﻿/* 🎛️ Стили для улучшенных настроек */
+.settings-panel {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    max-width: 500px;
+    max-height: 80vh;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    z-index: 1000;
+    overflow: hidden;
+}
+
+.settings-header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.settings-header h3 {
+    margin: 0;
+    font-size: 1.2em;
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5em;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.settings-content {
+    padding: 20px;
+    overflow-y: auto;
+    max-height: calc(80vh - 140px);
+}
+
+.settings-section {
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #eee;
+}
+
+.settings-section h4 {
+    margin: 0 0 15px 0;
+    color: #333;
+    font-size: 1.1em;
+}
+
+.setting-item {
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.setting-item label {
+    flex: 1;
+    margin-right: 15px;
+}
+
+.setting-item input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+.setting-item input[type="range"] {
+    flex: 2;
+    margin-right: 10px;
+}
+
+.volume-value {
+    min-width: 40px;
+    text-align: right;
+    font-weight: bold;
+}
+
+.settings-footer {
+    padding: 15px 20px;
+    background: #f5f5f5;
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+}
+
+.btn-primary, .btn-secondary {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9em;
+}
+
+.btn-primary {
+    background: #4CAF50;
+    color: white;
+}
+
+.btn-secondary {
+    background: #e0e0e0;
+    color: #333;
+}
+
+.floating-settings-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    font-size: 1.5em;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    z-index: 999;
+    transition: transform 0.3s ease;
+}
+
+.floating-settings-btn:hover {
+    transform: scale(1.1);
+}
+
+/* Toast уведомления */
+.settings-toast {
+    animation: slideIn 0.3s ease;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Темы */
+[data-theme="dark"] .settings-panel {
+    background: #2d3748;
+    color: white;
+}
+
+[data-theme="dark"] .settings-section {
+    border-bottom-color: #4a5568;
+}
+
+[data-theme="dark"] .settings-section h4 {
+    color: #e2e8f0;
+}
+
+[data-theme="dark"] .settings-footer {
+    background: #1a202c;
+}
+
+/* Accessibility */
+.reduced-motion * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+}

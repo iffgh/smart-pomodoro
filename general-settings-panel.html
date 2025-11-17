@@ -1,0 +1,92 @@
+﻿<!-- 🎛️ Панель общих настроек -->
+<div id="generalSettingsPanel" class="settings-panel" style="display: none;">
+    <div class="settings-header">
+        <h3>🎛️ Общие настройки приложения</h3>
+        <button onclick="window.generalSettings.toggleSettingsPanel()" class="close-btn">✕</button>
+    </div>
+    
+    <div class="settings-content">
+        <!-- 🌐 Основные настройки -->
+        <div class="settings-section">
+            <h4>🌐 Основные</h4>
+            <div class="setting-item">
+                <label for="languageSelect">Язык интерфейса:</label>
+                <select id="languageSelect">
+                    <option value="ru">Русский</option>
+                    <option value="en">English</option>
+                </select>
+            </div>
+            <div class="setting-item">
+                <label for="themeSelect">Цветовая тема:</label>
+                <select id="themeSelect">
+                    <option value="default">По умолчанию</option>
+                    <option value="dark">Темная</option>
+                    <option value="light">Светлая</option>
+                    <option value="nature">Природа</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- 🔔 Уведомления -->
+        <div class="settings-section">
+            <h4>🔔 Уведомления</h4>
+            <div class="setting-item">
+                <input type="checkbox" id="desktopNotifications" checked>
+                <label for="desktopNotifications">Desktop уведомления</label>
+            </div>
+            <div class="setting-item">
+                <input type="checkbox" id="soundNotifications" checked>
+                <label for="soundNotifications">Звуковые уведомления</label>
+            </div>
+            <div class="setting-item">
+                <label for="globalVolume">Громкость уведомлений:</label>
+                <input type="range" id="globalVolume" min="0" max="100" value="50">
+                <span class="volume-value">50%</span>
+            </div>
+        </div>
+
+        <!-- ⚡ Производительность -->
+        <div class="settings-section">
+            <h4>⚡ Производительность</h4>
+            <div class="setting-item">
+                <input type="checkbox" id="reduceAnimations">
+                <label for="reduceAnimations">Уменьшить анимации</label>
+            </div>
+        </div>
+
+        <!-- 📊 Данные -->
+        <div class="settings-section">
+            <h4>📊 Данные и аналитика</h4>
+            <div class="setting-item">
+                <input type="checkbox" id="anonymousStats">
+                <label for="anonymousStats">Анонимная статистика</label>
+            </div>
+        </div>
+
+        <!-- 🎯 Дополнительно -->
+        <div class="settings-section">
+            <h4>🎯 Дополнительно</h4>
+            <div class="setting-item">
+                <input type="checkbox" id="keyboardShortcuts" checked>
+                <label for="keyboardShortcuts">Горячие клавиши (Ctrl+,)</label>
+            </div>
+            <div class="setting-item">
+                <input type="checkbox" id="achievementAlerts" checked>
+                <label for="achievementAlerts">Оповещения о достижениях</label>
+            </div>
+        </div>
+    </div>
+
+    <div class="settings-footer">
+        <button onclick="window.generalSettings.saveSettings()" class="btn-primary">💾 Сохранить</button>
+        <button onclick="window.generalSettings.resetToDefaults()" class="btn-secondary">🔄 Сбросить</button>
+        <button onclick="window.generalSettings.toggleSettingsPanel()" class="btn-secondary">❌ Закрыть</button>
+    </div>
+</div>
+
+<!-- Кнопка для открытия общих настроек -->
+<button id="generalSettingsBtn" class="floating-settings-btn" 
+        onclick="window.generalSettings.toggleSettingsPanel()" 
+        title="Общие настройки (Ctrl+,)">
+    ⚙️
+</button>

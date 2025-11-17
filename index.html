@@ -6,8 +6,9 @@
     <title>🍅 Умный Pomodoro Таймер</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/achievements.css">
+    <link rel="stylesheet" href="css/themes.css">
 </head>
-<body>
+<body class="gray-theme">
     <div class="container">
         <header>
             <h1>🍅 Умный Pomodoro</h1>
@@ -26,6 +27,11 @@
                     <input type="number" id="breakTime" min="1" max="600" value="30">
                 </div>
             </div>
+            
+            <button class="settings-menu-btn" onclick="openSettings()">
+                ⚙️ Настройки приложения
+            </button>
+            
             <button class="settings-btn" onclick="pomodoro.applySettings()">💾 Применить настройки</button>
         </div>
         
@@ -101,12 +107,75 @@
         <span id="notificationText">Уведомление</span>
     </div>
 
+    <div id="settingsMenu" class="settings-menu">
+        <div class="menu-overlay" onclick="closeSettings()"></div>
+        <div class="menu-content">
+            <div class="menu-header">
+                <h2>⚙️ Настройки</h2>
+                <button class="menu-close" onclick="closeSettings()">×</button>
+            </div>
+            
+            <div class="menu-sections">
+                <div class="menu-section">
+                    <div class="section-header">
+                        <div class="section-icon">🔊</div>
+                        <h3>Звуковые уведомления</h3>
+                    </div>
+                    <div class="section-content">
+                        <label class="checkbox-container">
+                            <input type="checkbox" id="soundEnabled" checked>
+                            <span class="checkmark"></span>
+                            <span class="checkbox-label">Включить звуки</span>
+                        </label>
+                        <p class="section-description">Оповещения о завершении работы и перерывов</p>
+                    </div>
+                </div>
+                
+                <div class="menu-section">
+                    <div class="section-header">
+                        <div class="section-icon">🎨</div>
+                        <h3>Внешний вид</h3>
+                    </div>
+                    <div class="section-content">
+                        <div class="theme-options">
+                            <div class="theme-option active" onclick="changeTheme('gray')" data-theme="gray">
+                                <div class="theme-preview gray-theme"></div>
+                                <span class="theme-name">Серая</span>
+                            </div>
+                            <div class="theme-option" onclick="changeTheme('dark')" data-theme="dark">
+                                <div class="theme-preview dark-theme"></div>
+                                <span class="theme-name">Темная</span>
+                            </div>
+                            <div class="theme-option" onclick="changeTheme('light')" data-theme="light">
+                                <div class="theme-preview light-theme"></div>
+                                <span class="theme-name">Светлая</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="menu-footer">
+                <button class="menu-btn secondary" onclick="resetSettings()">
+                    <span>🔄</span>
+                    Сбросить
+                </button>
+                <button class="menu-btn primary" onclick="saveSettings()">
+                    <span>💾</span>
+                    Сохранить
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/simple-themes.js"></script>
+    <script src="js/config.js"></script>
     <script src="js/custom.js"></script>
-<script src="js/achievements.js"></script>
-<script src="js/statistics.js"></script>
-<script src="js/practices.js"></script>
-<script src="js/notifications.js"></script>
-<script src="js/timer.js"></script>
-<script src="js/main.js"></script>
+    <script src="js/achievements.js"></script>
+    <script src="js/statistics.js"></script>
+    <script src="js/practices.js"></script>
+    <script src="js/notifications.js"></script>
+    <script src="js/timer.js"></script>
+    <script src="js/main.js"></script>
 </body>
 </html>

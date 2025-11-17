@@ -1,0 +1,564 @@
+﻿/* 🌟 УПРОЩЕННАЯ СИСТЕМА ТЕМ */
+
+/* СЕРЫЙ ТЕМА (по умолчанию) */
+body.gray-theme {
+    background: #2c3e50 !important;
+    color: white !important;
+}
+
+body.gray-theme .container {
+    background: #34495e !important;
+    color: white !important;
+    border: 1px solid #4a6278 !important;
+}
+
+body.gray-theme .timer-section {
+    background: #2c3e50 !important;
+    color: white !important;
+    border: 1px solid #4a6278 !important;
+}
+
+body.gray-theme .settings,
+body.gray-theme .techniques-section,
+body.gray-theme .sessions-history,
+body.gray-theme .practice-steps {
+    background: #34495e !important;
+    color: white !important;
+    border: 1px solid #4a6278 !important;
+}
+
+/* ТЕМНАЯ ТЕМА */
+body.dark-theme {
+    background: #1a1a1a !important;
+    color: white !important;
+}
+
+body.dark-theme .container {
+    background: #2d2d2d !important;
+    color: white !important;
+    border: 1px solid #404040 !important;
+}
+
+body.dark-theme .timer-section {
+    background: #1a1a1a !important;
+    color: white !important;
+    border: 1px solid #404040 !important;
+}
+
+body.dark-theme .settings,
+body.dark-theme .techniques-section,
+body.dark-theme .sessions-history,
+body.dark-theme .practice-steps {
+    background: #2d2d2d !important;
+    color: white !important;
+    border: 1px solid #404040 !important;
+}
+
+/* 🌞 ЧИСТО БЕЛАЯ СВЕТЛАЯ ТЕМА */
+body.light-theme {
+    background: #ffffff !important;
+    color: #000000 !important;
+}
+
+body.light-theme .container {
+    background: #ffffff !important;
+    color: #000000 !important;
+    border: 1px solid #e0e0e0 !important;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08) !important;
+}
+
+body.light-theme .timer-section {
+    background: #ffffff !important;
+    color: #000000 !important;
+    border: 1px solid #e0e0e0 !important;
+}
+
+body.light-theme .timer-section.work-active {
+    background-color: #ffffff !important;
+    border: 1px solid #e74c3c !important;
+}
+
+body.light-theme .timer-section.practice-active {
+    background-color: #ffffff !important;
+    border: 1px solid #2ecc71 !important;
+}
+
+body.light-theme .settings,
+body.light-theme .techniques-section,
+body.light-theme .sessions-history,
+body.light-theme .practice-steps {
+    background: #ffffff !important;
+    color: #000000 !important;
+    border: 1px solid #e0e0e0 !important;
+}
+
+/* ТЕКСТ В СВЕТЛОЙ ТЕМЕ */
+body.light-theme h1,
+body.light-theme h2,
+body.light-theme h3,
+body.light-theme h4,
+body.light-theme .section-title,
+body.light-theme .subtitle,
+body.light-theme .time-input label,
+body.light-theme .technique-name,
+body.light-theme .technique-description,
+body.light-theme .category-description,
+body.light-theme .auto-practice-info,
+body.light-theme .step-instruction,
+body.light-theme .mini-stat-label,
+body.light-theme .mini-stat-value,
+body.light-theme .history-item,
+body.light-theme #sessionInfo,
+body.light-theme #practiceInfo {
+    color: #000000 !important;
+}
+
+/* ИНПУТЫ */
+body.light-theme .time-input input {
+    background: #ffffff !important;
+    color: #000000 !important;
+    border: 1px solid #d0d0d0 !important;
+}
+
+body.light-theme .time-input input:focus {
+    border-color: #3498db !important;
+    outline: none;
+    background: #ffffff !important;
+}
+
+/* КАРТОЧКИ ПРАКТИК */
+body.light-theme .technique-card {
+    background: #ffffff !important;
+    color: #000000 !important;
+    border: 1px solid #e0e0e0 !important;
+}
+
+body.light-theme .technique-card:hover {
+    border-color: #2ecc71 !important;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1) !important;
+    background: #ffffff !important;
+}
+
+body.light-theme .technique-card.selected {
+    border-color: #2ecc71 !important;
+    background-color: #f8fff8 !important;
+}
+
+/* КНОПКИ КАТЕГОРИЙ */
+body.light-theme .category-btn {
+    background: #ffffff !important;
+    color: #000000 !important;
+    border: 1px solid #d0d0d0 !important;
+}
+
+body.light-theme .category-btn.active {
+    background: #2ecc71 !important;
+    color: white !important;
+    border-color: #2ecc71 !important;
+}
+
+/* ОСНОВНЫЕ КНОПКИ */
+body.light-theme .primary-btn {
+    background: #3498db !important;
+    color: white !important;
+}
+
+body.light-theme .secondary-btn {
+    background: #95a5a6 !important;
+    color: white !important;
+}
+
+body.light-theme .settings-btn {
+    background: #9b59b6 !important;
+    color: white !important;
+}
+
+body.light-theme .settings-menu-btn {
+    background: #3498db !important;
+    color: white !important;
+    border: none !important;
+}
+
+/* ПРОГРЕСС БАР */
+body.light-theme .progress-container {
+    background: #e9ecef !important;
+}
+
+body.light-theme .progress-work {
+    background: #e74c3c !important;
+}
+
+body.light-theme .progress-practice {
+    background: #2ecc71 !important;
+}
+
+/* ШАГИ ПРАКТИК */
+body.light-theme .step-item {
+    background: #ffffff !important;
+    color: #000000 !important;
+    border: 1px solid #e0e0e0 !important;
+}
+
+body.light-theme .step-item.completed {
+    background: #f0fff4 !important;
+    border-left: 4px solid #2ecc71 !important;
+}
+
+body.light-theme .step-item.current {
+    background: #fffbf0 !important;
+    border-left: 4px solid #f39c12 !important;
+}
+
+/* ТАЙМЕР */
+body.light-theme .timer-display {
+    color: #000000 !important;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.1) !important;
+}
+
+/* МЕНЮ НАСТРОЕК ДЛЯ СВЕТЛОЙ ТЕМЫ */
+body.light-theme .menu-content {
+    background: #ffffff !important;
+    color: #000000 !important;
+    border: 1px solid #e0e0e0 !important;
+}
+
+body.light-theme .menu-header {
+    border-bottom: 1px solid #e0e0e0 !important;
+    background: #ffffff !important;
+}
+
+body.light-theme .menu-header h2 {
+    color: #3498db !important;
+}
+
+body.light-theme .menu-close {
+    background: #f8f9fa !important;
+    color: #000000 !important;
+}
+
+body.light-theme .menu-section {
+    border-bottom: 1px solid #e0e0e0 !important;
+    background: #ffffff !important;
+}
+
+body.light-theme .section-header h3 {
+    color: #2ecc71 !important;
+}
+
+body.light-theme .checkbox-label {
+    color: #000000 !important;
+}
+
+body.light-theme .section-description {
+    color: #666666 !important;
+}
+
+body.light-theme .theme-option {
+    background: #ffffff !important;
+    border: 1px solid #e0e0e0 !important;
+}
+
+body.light-theme .theme-name {
+    color: #000000 !important;
+}
+
+body.light-theme .menu-footer {
+    background: #ffffff !important;
+    border-top: 1px solid #e0e0e0 !important;
+}
+
+body.light-theme .menu-btn.secondary {
+    background: #f8f9fa !important;
+    color: #000000 !important;
+    border: 1px solid #d0d0d0 !important;
+}
+
+/* ГАЛОЧКА */
+body.light-theme .checkmark {
+    border-color: #3498db !important;
+}
+
+body.light-theme .checkbox-container input:checked + .checkmark {
+    background: #3498db !important;
+    border-color: #3498db !important;
+}
+
+/* СТИЛИ МЕНЮ НАСТРОЕК */
+.settings-menu {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10000;
+}
+
+.menu-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
+}
+
+.menu-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    max-width: 500px;
+    max-height: 90vh;
+    background: #2c3e50;
+    border-radius: 20px;
+    box-shadow: 0 25px 50px rgba(0,0,0,0.5);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.menu-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 30px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    background: rgba(255,255,255,0.05);
+}
+
+.menu-header h2 {
+    color: #3498db;
+    margin: 0;
+    font-size: 1.5em;
+}
+
+.menu-close {
+    background: rgba(255,255,255,0.1);
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.menu-close:hover {
+    background: rgba(255,255,255,0.2);
+    transform: rotate(90deg);
+}
+
+.menu-sections {
+    flex: 1;
+    overflow-y: auto;
+    padding: 0;
+}
+
+.menu-section {
+    padding: 25px 30px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.menu-section:last-child {
+    border-bottom: none;
+}
+
+.section-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.section-icon {
+    font-size: 24px;
+    width: 40px;
+    height: 40px;
+    background: rgba(52, 152, 219, 0.1);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.section-header h3 {
+    color: #2ecc71;
+    margin: 0;
+    font-size: 1.2em;
+}
+
+.checkbox-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    cursor: pointer;
+    padding: 10px 0;
+}
+
+.checkbox-container input {
+    display: none;
+}
+
+.checkmark {
+    width: 22px;
+    height: 22px;
+    border: 2px solid #3498db;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+}
+
+.checkmark:after {
+    content: "✓";
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.checkbox-container input:checked + .checkmark {
+    background: #3498db;
+    border-color: #3498db;
+}
+
+.checkbox-container input:checked + .checkmark:after {
+    opacity: 1;
+}
+
+.checkbox-label {
+    color: #ecf0f1;
+    font-weight: 500;
+    font-size: 1em;
+}
+
+.section-description {
+    color: #bdc3c7;
+    font-size: 0.9em;
+    line-height: 1.5;
+    margin-top: 8px;
+    margin-left: 37px;
+}
+
+.theme-options {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+.theme-option {
+    text-align: center;
+    cursor: pointer;
+    padding: 15px 10px;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+    background: rgba(255,255,255,0.05);
+}
+
+.theme-option:hover {
+    background: rgba(255,255,255,0.1);
+    transform: translateY(-2px);
+}
+
+.theme-option.active {
+    border-color: #3498db;
+    background: rgba(52, 152, 219, 0.15);
+}
+
+.theme-preview {
+    width: 70px;
+    height: 50px;
+    border-radius: 8px;
+    margin: 0 auto 8px;
+    border: 2px solid rgba(255,255,255,0.3);
+}
+
+.theme-preview.gray-theme {
+    background: linear-gradient(135deg, #2c3e50, #34495e);
+}
+
+.theme-preview.dark-theme {
+    background: linear-gradient(135deg, #1a1a1a, #2d2d2d);
+}
+
+.theme-preview.light-theme {
+    background: #ffffff;
+    border-color: #cccccc;
+}
+
+.theme-name {
+    color: #ecf0f1;
+    font-size: 0.9em;
+    font-weight: 500;
+    display: block;
+}
+
+.menu-footer {
+    padding: 25px 30px;
+    background: rgba(255,255,255,0.03);
+    border-top: 1px solid rgba(255,255,255,0.1);
+    display: flex;
+    gap: 15px;
+}
+
+.menu-btn {
+    flex: 1;
+    padding: 15px 20px;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.95em;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.menu-btn.primary {
+    background: linear-gradient(135deg, #2ecc71, #27ae60);
+    color: white;
+}
+
+.menu-btn.secondary {
+    background: rgba(255,255,255,0.1);
+    color: white;
+    border: 1px solid rgba(255,255,255,0.2);
+}
+
+.menu-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.settings-menu-btn {
+    background: #3498db;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 10px auto;
+    transition: all 0.3s ease;
+}
+
+.settings-menu-btn:hover {
+    background: #2980b9;
+    transform: translateY(-2px);
+}
