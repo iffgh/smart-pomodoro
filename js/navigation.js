@@ -134,16 +134,15 @@ class Navigation {
         console.log('✅ Настройки загружены');
     }
 
-   updateSoundSettings(enabled) {
-    console.log(`🔊 Обновление настроек звука: ${enabled}`);
-    
-    if (window.notificationManager) {
-        // Используем правильный метод
-        notificationManager.updateSoundSettings(enabled);
+    updateSoundSettings(enabled) {
+        console.log(`🔊 Обновление настроек звука: ${enabled}`);
+        
+        if (window.notificationManager) {
+            notificationManager.setSoundEnabled(enabled);
+        }
+        
+        localStorage.setItem('soundEnabled', enabled);
     }
-    
-    localStorage.setItem('soundEnabled', enabled);
-}
 
     updateAutoStartSettings(enabled) {
         console.log(`🔄 Обновление автозапуска: ${enabled}`);

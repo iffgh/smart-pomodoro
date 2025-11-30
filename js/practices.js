@@ -190,3 +190,15 @@ class Practices {
 document.addEventListener('DOMContentLoaded', () => {
     window.practices = new Practices();
 });
+// Отслеживание прогресса по практикам
+this.userProgress = {
+    favoritePractices: [],
+    completedCount: {},
+    skillLevel: {
+        breathing: 'beginner',
+        physical: 'beginner', 
+        vision: 'beginner',
+        cognitive: 'beginner',
+        energy: 'beginner'
+    }
+};
